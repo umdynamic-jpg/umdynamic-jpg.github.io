@@ -1,2 +1,9 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Dynamic Dance Editor</title></head>
-<body><script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script></body></html>
+---
+layout: default
+---
+{% assign h = site.data.home %}
+<section class="hero"><div class="hero-text"><h1>{% for w in h.tagline %}<span><b>{{ w | slice: 0 }}</b>{{ w | slice: 1, 30 }}</span>{% endfor %}</h1><p class="lead">{{ h.intro }}</p><a class="btn" href="{{ '/join.html' | relative_url }}">{{ h.cta_text }}</a></div>
+<div class="photo"><img src="{{ h.hero_image | relative_url }}" alt="Dynamic Dance performing"><span class="badge">{{ h.badge }}</span></div></section>
+<section class="wrap"><h2>{{ h.tiles_heading }}</h2><div class="tiles">{% for t in h.tiles %}<a class="tile {{ t.style }}" href="{{ t.link | relative_url }}"><h3>{{ t.title }}</h3><p>{{ t.text }}</p></a>{% endfor %}</div></section>
+<section class="wrap story"><div><h2>{{ h.story_heading }}</h2>{{ h.story_text | markdownify }}</div><img src="{{ h.story_image | relative_url }}" alt="Dynamic Dance members"></section>
+<section class="band"><div class="wrap"><h2>{{ h.follow_heading }}</h2><p>{{ h.follow_text }}</p><a class="btn dark" href="{{ site.data.settings.instagram }}">@umdynamic on Instagram</a></div></section>
