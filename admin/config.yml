@@ -1,8 +1,8 @@
 backend:
   name: github
-  repo: umdynamic-jpg/umdynamic-jpg.github.io/            # e.g. umd-dynamic/umd-dynamic.github.io
+  repo: umdynamic-jpg/umdynamic-jpg.github.io
   branch: main
-  base_url: https://YOUR-OAUTH-PROXY.workers.dev   # see README step 3
+  base_url: https://YOUR-OAUTH-PROXY.workers.dev
 media_folder: images
 public_folder: /images
 collections:
@@ -14,7 +14,19 @@ collections:
         file: _data/home.yml
         fields:
           - {label: Tagline words (one per line), name: tagline, widget: list, field: {label: Word, name: word, widget: string}}
+          - {label: Intro sentence, name: intro, widget: text}
+          - {label: Main button text, name: cta_text, widget: string}
+          - {label: Sticker text, name: badge, widget: string}
           - {label: Top photo, name: hero_image, widget: image}
+          - {label: Boxes heading, name: tiles_heading, widget: string}
+          - label: Boxes
+            name: tiles
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Text, name: text, widget: string}
+              - {label: Page it links to (e.g. join.html), name: link, widget: string}
+              - {label: Color, name: style, widget: select, options: [red, black, white]}
           - {label: Story heading, name: story_heading, widget: string}
           - {label: Story text, name: story_text, widget: markdown}
           - {label: Story photo, name: story_image, widget: image}
@@ -41,14 +53,12 @@ collections:
           - {label: YouTube link, name: youtube, widget: string}
           - {label: Contact form link (Formspree), name: form_url, widget: string}
       - &pg
-        name: opportunities
-        label: Opportunities page
-        file: opportunities.md
+        name: join
+        label: Join Us page
+        file: join.md
         fields: &pf
           - {label: Title, name: title, widget: string}
           - {label: Layout, name: layout, widget: hidden, default: page}
           - {label: Address, name: permalink, widget: hidden}
           - {label: Page content, name: body, widget: markdown}
-      - {name: workshops, label: Workshops page, file: workshops.md, fields: *pf}
-      - {name: rip-the-floor, label: Rip The Floor 2025 page, file: rip-the-floor.md, fields: *pf}
-      - {name: competition-guidelines, label: RTF Competition Guidelines page, file: competition-guidelines.md, fields: *pf}
+      - {name: rip-the-floor, label: Rip The Floor page, file: rip-the-floor.md, fields: *pf}
