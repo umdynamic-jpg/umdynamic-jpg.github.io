@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: styles6/styles6.github.io            # e.g. umd-dynamic/umd-dynamic.github.io
+  repo: umd-dynamic/umd-dynamic.github.io/            # e.g. umd-dynamic/umd-dynamic.github.io
   branch: main
   base_url: https://YOUR-OAUTH-PROXY.workers.dev   # see README step 3
 media_folder: images
