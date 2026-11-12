@@ -2,7 +2,7 @@ backend:
   name: github
   repo: umdynamic-jpg/umdynamic-jpg.github.io
   branch: main
-  base_url: https://YOUR-OAUTH-PROXY.workers.dev
+  base_url: https://dynamic-auth.umdynamic.workers.dev
 media_folder: images
 public_folder: /images
 collections:
